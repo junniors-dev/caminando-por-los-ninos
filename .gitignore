@@ -1,0 +1,7 @@
+# Capturas originales de Instagram: 14 MB, no hacen falta para publicar
+fotos/
+# Recortes intermedios en JPG; los que se publican son los .webp
+recortes/
+ig/
+__pycache__/
+*.pyc
