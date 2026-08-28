@@ -323,8 +323,13 @@ form{display:grid;gap:19px}
      de estirarse a 1,5x como cuando ocupaba el ancho completo.
      De paso la seccion pasa de 2291px de alto a la mitad. */
   .card{flex-direction:row;align-items:stretch}
-  .card-art{aspect-ratio:auto;flex:0 0 132px;border-bottom:0;border-right:1px solid var(--linea)}
-  .card-art img{height:100%}
+  /* La foto va posicionada contra la caja, no con height:100%. Con
+     height:100% la altura de la imagen dependia de la caja y la de la
+     caja del contenido de al lado: Chrome lo resuelve como auto, pero
+     WebKit entra en bucle y estira la tarjeta a mil pixeles. Con
+     position:absolute la caja manda y la imagen solo la rellena. */
+  .card-art{position:relative;flex:0 0 132px;aspect-ratio:auto;min-height:160px;border-bottom:0;border-right:1px solid var(--linea)}
+  .card-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
   .card-body{padding:18px 18px 18px 17px;gap:7px}
   .card h3{font-size:1.06rem;line-height:1.2}
   .card p{font-size:.87rem}
