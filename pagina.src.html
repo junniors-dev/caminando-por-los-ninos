@@ -313,6 +313,48 @@ form{display:grid;gap:19px}
 
 .reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
 .reveal.in{opacity:1;transform:none}
+
+/* ============================================================
+   CELULAR — la mayoria va a entrar por WhatsApp desde el telefono.
+   ============================================================ */
+@media (max-width:620px){
+  /* Tarjetas horizontales: la foto pasa a una columna de 132px, o sea
+     que se muestra MAS CHICA que su resolucion real (232-286px) en vez
+     de estirarse a 1,5x como cuando ocupaba el ancho completo.
+     De paso la seccion pasa de 2291px de alto a la mitad. */
+  .card{flex-direction:row;align-items:stretch}
+  .card-art{aspect-ratio:auto;flex:0 0 132px;border-bottom:0;border-right:1px solid var(--linea)}
+  .card-art img{height:100%}
+  .card-body{padding:18px 18px 18px 17px;gap:7px}
+  .card h3{font-size:1.06rem;line-height:1.2}
+  .card p{font-size:.87rem}
+  .card-tag{font-size:.62rem;letter-spacing:.2em}
+  .card-mas{padding-top:13px;min-height:44px;align-items:center}
+  .card:hover{transform:none}
+
+  /* menos aire vertical: 12 secciones a 56px sumaban pantalla y media */
+  .sec{padding:46px 0}
+  .sec-head{margin-bottom:30px}
+  .banda{padding:56px 0}
+  /* los pies de foto a 12px sobre el degradado costaban leerlos */
+  .tile figcaption{font-size:.83rem;padding:30px 12px 11px}
+
+  /* area tactil minima de 44px */
+  .nav-toggle{padding:13px}
+  .faq summary{padding:17px 0;min-height:44px}
+  /* los enlaces del pie median 18px de alto: imposibles de acertar */
+  .foot-grid ul{gap:0}
+  .foot-grid a{display:flex;align-items:center;min-height:46px}
+}
+
+@media (max-width:520px){
+  /* botones a lo ancho: mas facil de acertar con el pulgar */
+  .hero-cta,.banda-cta{flex-direction:column;align-items:stretch}
+  .hero-cta .btn,.banda-cta .btn{width:100%}
+  .caja .btn{align-self:stretch}
+  .btn{padding:16px 24px}
+  .ig-btn{justify-content:center}
+}
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto}
   .reveal{opacity:1;transform:none;transition:none}
