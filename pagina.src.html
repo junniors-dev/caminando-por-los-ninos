@@ -1,9 +1,9 @@
 <meta charset="utf-8">
 <title>Caminando por los Niños</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Grupo solidario del Gran Rosario. Viandas los sábados para personas en situación de calle, módulos alimentarios, abrigo y encuentros de barrio.">
+<meta name="description" content="Organización comunitaria sin fines de lucro en Rosario desde 2005. Viandas, campañas de abrigo, donaciones y acompañamiento en Zona Sur, Molino Blanco, Las Flores y Zona Norte.">
 <meta property="og:title" content="Caminando por los Niños">
-<meta property="og:description" content="Vecinos del Gran Rosario. Viandas todos los sábados, módulos alimentarios, abrigo y encuentros de barrio.">
+<meta property="og:description" content="Organización comunitaria sin fines de lucro en Rosario desde 2005. Más de 20 voluntarios, 300 raciones por jornada.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_AR">
 <link rel="icon" type="image/webp" href="{{logo-sello}}">
@@ -137,8 +137,8 @@ img{max-width:100%;display:block}
 .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
 /* El emblema es el activo de mayor resolucion que tenemos (660px):
    es el unico que aguanta ocupar un area grande sin verse blando. */
-.hero-foto{margin:0;max-width:560px;margin-inline:auto;width:100%}
-.hero-foto img{width:100%;height:auto;border-radius:18px;box-shadow:0 26px 60px var(--sombra-2)}
+.hero-foto{margin:0;max-width:470px;margin-inline:auto;width:100%}
+.hero-foto img{width:100%;height:auto;border-radius:50%;box-shadow:0 26px 60px var(--sombra-2)}
 
 /* guirnalda de tiza */
 .guirnalda-wrap{padding:clamp(22px,3.5vw,40px) 0 0}
@@ -208,6 +208,31 @@ img{max-width:100%;display:block}
 .num i{display:block;font-style:normal;font-family:"Marcellus",Georgia,serif;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--texto-2);margin:14px 0 8px}
 .num span{font-size:.9rem;color:var(--texto-2);line-height:1.5}
 
+/* ---------- PROYECTO A FUTURO ---------- */
+.proyecto{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(30px,4.5vw,54px);align-items:center}
+@media (max-width:820px){.proyecto{grid-template-columns:1fr}}
+.proyecto-lista{list-style:none;margin:0;padding:0;display:grid;gap:0;counter-reset:paso}
+.proyecto-lista li{
+  display:flex;align-items:center;gap:18px;
+  padding:20px 4px;border-bottom:1px solid var(--linea);
+  font-size:1.02rem;color:var(--texto);
+}
+.proyecto-lista li:first-child{border-top:1px solid var(--linea)}
+.proyecto-lista li::before{
+  counter-increment:paso;content:counter(paso,decimal-leading-zero);
+  font-family:"Karla",sans-serif;font-weight:700;font-size:.82rem;
+  color:var(--violeta);letter-spacing:.06em;flex:0 0 auto;
+  font-variant-numeric:tabular-nums;
+}
+.proyecto-foto{margin:0}
+.proyecto-foto img{width:100%;height:auto;border-radius:16px;border:1px solid var(--linea);box-shadow:0 16px 40px var(--sombra)}
+.proyecto-foto figcaption{margin-top:12px;font-size:.85rem;color:var(--texto-2)}
+.proyecto-lema{
+  margin-top:clamp(34px,4.5vw,50px);padding-top:28px;border-top:1px solid var(--linea);
+  font-family:"Marcellus",Georgia,serif;font-size:clamp(1.15rem,2.4vw,1.55rem);
+  line-height:1.4;color:var(--violeta);max-width:34ch;
+}
+
 /* ---------- 6. DOBLE CTA ---------- */
 .doble{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 @media (max-width:820px){.doble{grid-template-columns:1fr}}
@@ -241,7 +266,7 @@ img{max-width:100%;display:block}
 .mosaic{display:grid;grid-template-columns:repeat(5,1fr);grid-auto-rows:190px;gap:16px}
 .tile{position:relative;border:1px solid var(--linea);padding:0;cursor:zoom-in;border-radius:14px;overflow:hidden;background:var(--tarjeta);transition:transform .22s ease,box-shadow .22s ease}
 .tile-izq{grid-column:1;grid-row:1 / span 2}
-.tile-der{grid-column:5;grid-row:1 / span 2}
+.tile-der{grid-column:5;grid-row:1}
 @media (max-width:900px){
   .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:158px}
   .tile-izq,.tile-der{grid-column:auto;grid-row:span 2}
@@ -424,14 +449,14 @@ form{display:grid;gap:19px}
     <div>
       <p class="lema">La rueda gira: hoy los acompañamos,<br>mañana ellos guían.</p>
       <h1>Caminando<br>por los Niños</h1>
-      <p class="hero-lead">Somos vecinos del Gran Rosario. Cocinamos viandas los sábados para personas en situación de calle, armamos módulos de mercadería, juntamos abrigo y salimos al barrio a encontrarnos. Nadie es invisible para nosotros.</p>
+      <p class="hero-lead">Organización comunitaria sin fines de lucro, en Rosario desde <strong>2005</strong>. Más de veinte voluntarios llevando viandas, abrigo y acompañamiento a las familias de Zona Sur, Molino Blanco, Barrio Las Flores y Zona Norte.</p>
       <div class="hero-cta">
         <a class="btn btn-sol" href="#ayudar">Quiero colaborar</a>
         <a class="btn btn-lila" href="#programas">Conocé lo que hacemos</a>
       </div>
     </div>
     <figure class="hero-foto">
-      <img src="{{hero-sello}}" alt="Sello de Caminando por los Niños: una familia caminando hacia el atardecer, cinco chicos tomados de la mano y dos huellas de pie." width="660" height="444">
+      <img src="{{logo-grande}}" alt="Logo de Caminando por los Niños: una familia caminando hacia el atardecer, cinco chicos tomados de la mano, dos huellas de pie y el lema «La rueda gira: hoy los acompañamos, mañana ellos guían»." width="900" height="900">
     </figure>
   </div>
 
@@ -449,7 +474,8 @@ form{display:grid;gap:19px}
   <div class="wrap proposito-grid reveal">
     <div>
       <p class="eyebrow">Nuestro propósito</p>
-      <p class="proposito">Que nadie del barrio tenga que pasar hambre ni frío estando solo.</p>
+      <p class="proposito">Contribuir al desarrollo humano y social de las personas en situación de vulnerabilidad.</p>
+      <p style="margin-top:18px;color:var(--texto-2);font-size:.97rem;max-width:38ch">Mediante acciones solidarias, asistencia comunitaria y proyectos de inclusión.</p>
       <figure class="foto-equipo">
         <img src="{{equipo-mural}}" alt="El equipo de Caminando por los Niños, nueve personas paradas frente al mural que pintaron entre todos." width="478" height="350">
         <figcaption>El grupo frente al mural terminado, en el espacio del barrio.</figcaption>
@@ -457,9 +483,9 @@ form{display:grid;gap:19px}
     </div>
     <div>
       <div class="prosa">
-        <p>No tenemos oficina, ni sueldos, ni una placa en la puerta. <strong>Caminando por los Niños</strong> es un grupo de vecinos que se puso de acuerdo para cocinar de más un sábado y salir a repartirlo entre las personas que duermen en la calle.</p>
-        <p>Con el tiempo se sumaron más manos y la cosa creció sola. Hoy hacemos las viandas todas las semanas, armamos módulos de mercadería para familias que la están pasando mal, juntamos ropa y frazadas cuando llega el frío, y organizamos encuentros en el barrio para las fechas que importan.</p>
-        <p>Cada acción chica suma: <strong>un paquete de fideos, una tarde de tu sábado, compartir una publicación.</strong></p>
+        <p><strong>Caminando por los Niños</strong> nació en 2005 a partir de una experiencia personal de vida. Nuestra fundadora atravesó necesidades durante su infancia y decidió devolverle a la comunidad la ayuda que había recibido.</p>
+        <p>Desde entonces el compromiso voluntario es el motor de todo. Somos una organización comunitaria sin fines de lucro integrada por <strong>más de veinte voluntarios</strong>, y lo que sostiene el trabajo es la cercanía: estar, escuchar y responder concretamente cuando una familia lo necesita.</p>
+        <p>Trabajamos en <strong>Zona Sur, Molino Blanco, Barrio Las Flores y Zona Norte</strong>, y en cualquier otro sector donde se detecte una necesidad urgente.</p>
       </div>
       <div class="pilares">
         <div class="pilar">
@@ -472,11 +498,11 @@ form{display:grid;gap:19px}
         </div>
         <div class="pilar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><circle cx="12" cy="7" r="3.2"/><path d="M5.5 20c0-3.6 2.9-6.2 6.5-6.2s6.5 2.6 6.5 6.2" stroke-linecap="round"/></svg>
-          <div><b>Infancia</b><span>Día del Niño, juguetes y momentos que se guardan.</span></div>
+          <div><b>Infancia</b><span>Actividades recreativas y jornadas para los chicos.</span></div>
         </div>
         <div class="pilar">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 20.5S4 15.6 4 10.2A4.2 4.2 0 0 1 12 8a4.2 4.2 0 0 1 8 2.2c0 5.4-8 10.3-8 10.3Z" stroke-linejoin="round"/></svg>
-          <div><b>Comunidad</b><span>Murales, encuentros y fechas para juntarse.</span></div>
+          <div><b>Acompañamiento</b><span>Estar presentes, más allá de lo que se entrega.</span></div>
         </div>
       </div>
     </div>
@@ -559,16 +585,43 @@ form{display:grid;gap:19px}
 <section class="sec">
   <div class="wrap">
     <div class="sec-head reveal">
-      <p class="eyebrow">Nuestros números</p>
-      <h2>Lo que se puede contar</h2>
-      <p>No manejamos estadísticas grandes. Estas son las cifras que sí podemos mostrar, y están todas publicadas en nuestro Instagram.</p>
+      <p class="eyebrow">Impacto social</p>
+      <h2>Lo que sostiene el trabajo</h2>
+      <p>Veinte años de trabajo comunitario sostenido, con el voluntariado como único motor.</p>
     </div>
     <div class="numeros reveal">
-      <div class="num"><b class="palabra">Sábados</b><i>Sin faltar</i><span>Las viandas salen todas las semanas, llueva o haga frío.</span></div>
-      <div class="num"><b>+134</b><i>Bolsitas</i><span>Armadas y numeradas a mano para el último Día del Niño.</span></div>
-      <div class="num"><b>0%</b><i>Gastos</i><span>No hay sueldos ni administración. Lo que entra, se reparte.</span></div>
-      <div class="num"><b>1</b><i>Mural</i><span>Pintado entre vecinos y artistas en el espacio del barrio.</span></div>
+      <div class="num"><b>2005</b><i>Año de creación</i><span>Dos décadas acompañando a las familias del sur y el norte de Rosario.</span></div>
+      <div class="num"><b>20+</b><i>Voluntarios activos</i><span>Nadie cobra. El compromiso voluntario es lo que mueve todo.</span></div>
+      <div class="num"><b>300</b><i>Raciones de alimentos</i><span>Aproximadamente, en cada jornada de entrega de viandas.</span></div>
+      <div class="num"><b>4</b><i>Zonas de trabajo</i><span>Zona Sur, Molino Blanco, Barrio Las Flores y Zona Norte.</span></div>
     </div>
+  </div>
+</section>
+
+<div class="franja franja-sec" aria-hidden="true"></div>
+
+<!-- ============ PROYECTO A FUTURO ============ -->
+<section class="sec" id="proyecto">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Proyecto a futuro</p>
+      <h2>Un espacio propio</h2>
+      <p>Nuestro principal objetivo hoy es construir y consolidar un lugar que nos permita ampliar el alcance de las actividades y fortalecer el trabajo comunitario.</p>
+    </div>
+    <div class="proyecto reveal">
+      <ul class="proyecto-lista">
+        <li><span>Techado y mejoras de infraestructura</span></li>
+        <li><span>Espacio para actividades educativas y recreativas</span></li>
+        <li><span>Lugar de encuentro para la comunidad</span></li>
+        <li><span>Depósito para almacenar y organizar las donaciones</span></li>
+        <li><span>Nuevos programas de inclusión social</span></li>
+      </ul>
+      <figure class="proyecto-foto">
+        <img src="{{mural-pintando}}" alt="El espacio del barrio mientras se pintaba el mural sobre la pared." width="476" height="638" loading="lazy">
+        <figcaption>El espacio como está hoy. Es el punto de partida.</figcaption>
+      </figure>
+    </div>
+    <p class="proyecto-lema reveal">«Solo unidos podemos construir un futuro mejor para quienes más lo necesitan.»</p>
   </div>
 </section>
 
@@ -593,11 +646,12 @@ form{display:grid;gap:19px}
       </div>
       <div class="caja caja-donar">
         <h3>Donar lo que puedas</h3>
-        <p>Recibimos alimentos, abrigo y cosas para el Día del Niño. Escribinos y te pasamos el punto de recepción más cercano.</p>
+        <p>Pueden colaborar particulares, empresas e instituciones. Escribinos y coordinamos el punto de recepción.</p>
         <ul class="caja-lista">
           <li>Alimentos no perecederos</li>
-          <li>Frazadas, ropa de abrigo y calzado</li>
-          <li>Golosinas y juguetes para el Día del Niño</li>
+          <li>Ropa, calzado y artículos de higiene</li>
+          <li>Materiales de construcción para el espacio</li>
+          <li>Aportes económicos</li>
         </ul>
         <a class="btn btn-sol" href="#recibimos">Ver qué necesitamos</a>
       </div>
@@ -648,9 +702,13 @@ form{display:grid;gap:19px}
         <img src="{{bolsitas}}" alt="Cientos de bolsitas del Día del Niño numeradas a mano, con moños rosas y celestes." width="470" height="784" loading="lazy">
         <figcaption>Las bolsitas del Día del Niño, numeradas una por una</figcaption>
       </button>
-      <button class="tile tile-der" type="button">
-        <img src="{{mural-pintando}}" alt="Dos artistas pintando el mural sobre la pared blanca del espacio." width="476" height="638" loading="lazy">
-        <figcaption>El mural mientras lo pintaban</figcaption>
+      <button class="tile" type="button">
+        <img src="{{abrigo}}" alt="Frazadas dobladas, zapatillas, guantes y una caja con alimentos y artículos de higiene." width="286" height="240" loading="lazy">
+        <figcaption>Lo que se junta en una campaña de abrigo</figcaption>
+      </button>
+      <button class="tile" type="button">
+        <img src="{{ropa-doblada}}" alt="Ropa de abrigo doblada y clasificada en un cajón de madera." width="164" height="230" loading="lazy">
+        <figcaption>Revisada y doblada antes de repartir</figcaption>
       </button>
       <button class="tile" type="button">
         <img src="{{equipo-mural}}" alt="El equipo completo posando frente al mural terminado." width="478" height="350" loading="lazy">
@@ -733,8 +791,9 @@ form{display:grid;gap:19px}
     </div>
     <div class="faq reveal">
       <details><summary>¿Cómo hago para donar?</summary><p>Escribinos por Instagram o por el formulario de acá abajo contándonos qué tenés para aportar. Te pasamos el punto de recepción más cercano y coordinamos un horario. Si es mucho volumen y estás dentro de la zona, lo pasamos a buscar.</p></details>
-      <details><summary>¿Son una fundación registrada?</summary><p>No. Somos un grupo de vecinos autoconvocados, sin personería jurídica ni estructura formal. Eso significa que no podemos emitir recibos ni certificados de donación — y también que no hay gastos administrativos: lo que entra sale.</p></details>
-      <details><summary>¿Puedo donar dinero?</summary><p>No tenemos cuenta ni plataforma de pagos. Lo que sí hacemos, cuando no alcanza para comprar la mercadería, es un <strong>bingo virtual</strong> entre conocidos para juntar el dinero. Lo avisamos por Instagram con anticipación y después publicamos en qué se usó.</p></details>
+      <details><summary>¿Qué tipo de organización son?</summary><p>Somos una <strong>organización comunitaria sin fines de lucro</strong>, en funcionamiento desde 2005 e integrada por más de veinte voluntarios. Nadie cobra un sueldo: todo lo que entra va a las familias. Si sos una empresa o institución y necesitás documentación para formalizar una donación, escribinos y lo coordinamos.</p></details>
+      <details><summary>¿Puedo donar dinero?</summary><p>Sí, recibimos aportes económicos. Escribinos por teléfono o por Instagram y coordinamos la forma. También hacemos <strong>bingos virtuales</strong> para juntar fondos cuando no alcanza para comprar la mercadería de las viandas — los avisamos por Instagram con anticipación.</p></details>
+      <details><summary>Soy una empresa, ¿cómo colaboramos?</summary><p>Recibimos donaciones de alimentos, ropa y calzado, artículos de higiene, <strong>materiales de construcción</strong> para el espacio comunitario que estamos levantando, y aportes económicos. También acciones de voluntariado corporativo. Escribinos al 341 596 6191 y armamos algo juntos.</p></details>
       <details><summary>¿A quién le llegan las viandas?</summary><p>Los sábados salimos a repartir el almuerzo entre personas en situación de calle. Los módulos alimentarios y la ropa van a familias del barrio, siempre coordinando con referentes de cada zona que son quienes saben quién está necesitando.</p></details>
       <details><summary>¿Puedo colaborar si no vivo en Rosario?</summary><p>Sí. Difundir sirve muchísimo: mucha gente nos conoció porque alguien compartió una publicación. Si querés mandar algo desde otra ciudad, escribinos y vemos juntos cómo hacerlo llegar.</p></details>
       <details><summary>¿Cómo sé que la ayuda llega?</summary><p>Publicamos las entregas en Instagram: la olla, las viandas, los bolsones, las bolsitas del Día del Niño. Además coordinamos siempre con referentes del barrio, así no se duplica ni se pierde nada por el camino.</p></details>
@@ -775,15 +834,19 @@ form{display:grid;gap:19px}
       </form>
 
       <div class="panel">
-        <h3>Lo más rápido es el mensaje directo</h3>
-        <p style="font-size:.94rem;color:var(--texto-2);margin-bottom:22px">Estamos todos los días en Instagram. Si necesitás una respuesta hoy, escribinos por ahí.</p>
+        <h3>Hablá con nosotros</h3>
+        <p style="font-size:.94rem;color:var(--texto-2);margin-bottom:20px">Lo más rápido es el teléfono o el mensaje directo. Contestamos nosotros mismos.</p>
+        <a class="ig-btn" style="margin-bottom:12px" href="https://wa.me/5493415966191" target="_blank" rel="noopener noreferrer">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.6 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5-4.5-.2-.2-1.2-1.6-1.2-3s.7-2.1 1-2.4c.2-.3.5-.4.7-.4h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.4.1.6-.1l.9-1c.2-.2.4-.2.6-.1l2 1c.2.1.4.2.4.3.1.1.1.6-.1 1.3Z"/></svg>
+          341 596 6191
+        </a>
         <a class="ig-btn" href="https://www.instagram.com/caminandopor_losninos/" target="_blank" rel="noopener noreferrer">
           <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor" stroke="none"/></svg>
           @caminandopor_losninos
         </a>
         <p style="font-size:.88rem;color:var(--texto-2);margin-top:24px;padding-top:20px;border-top:1px dashed var(--linea-fuerte)">
-          <strong style="color:var(--texto)">Dónde nos juntamos</strong><br>
-          Juan Pablo II 9896 — el espacio del mural, Gran Rosario, Santa Fe.<br>
+          <strong style="color:var(--texto)">Dónde estamos</strong><br>
+          Juan Pablo II 9896, Rosario, Santa Fe.<br>
           Los puntos de recepción de donaciones los coordinamos por mensaje.
         </p>
       </div>
@@ -808,11 +871,13 @@ form{display:grid;gap:19px}
         </div>
       </div>
       <div>
-        <h3>Dónde</h3>
+        <h3>Contacto</h3>
         <ul>
-          <li>Juan Pablo II 9896 — el espacio del mural</li>
-          <li>Barrios del Gran Rosario, Santa Fe</li>
-          <li>Puntos de recepción: consultá por mensaje</li>
+          <li><a href="https://wa.me/5493415966191" target="_blank" rel="noopener noreferrer">341 596 6191</a></li>
+          <li>Juan Pablo II 9896, Rosario</li>
+          <li>Zona Sur · Molino Blanco · Las Flores · Zona Norte</li>
+          <li>Presidenta: Marisol Zapata</li>
+          <li>Referente: Sol Zapata</li>
         </ul>
       </div>
       <div>
@@ -820,15 +885,15 @@ form{display:grid;gap:19px}
         <ul>
           <li><a href="#proposito">Quiénes somos</a></li>
           <li><a href="#programas">Qué hacemos</a></li>
+          <li><a href="#proyecto">Proyecto a futuro</a></li>
           <li><a href="#ayudar">Cómo ayudar</a></li>
-          <li><a href="#recibimos">Qué recibimos</a></li>
           <li><a href="#momentos">Momentos</a></li>
           <li><a href="#preguntas">Preguntas</a></li>
         </ul>
       </div>
     </div>
     <div class="foot-bar">
-      <span>Caminando por los Niños — grupo solidario del Gran Rosario, sin fines de lucro y sin personería jurídica.</span>
+      <span>Caminando por los Niños — organización comunitaria sin fines de lucro. Rosario, desde 2005.</span>
       <span>La rueda gira: hoy los acompañamos, mañana ellos guían.</span>
     </div>
   </div>
