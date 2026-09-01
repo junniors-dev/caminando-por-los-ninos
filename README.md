@@ -37,3 +37,11 @@ en el HTML, sin la extensión.
   `pagina.src.html`. Mientras esté vacía, el formulario copia el mensaje y abre
   el mensaje directo de Instagram.
 - Confirmar si Juan Pablo II 9896 es la dirección fija del espacio.
+
+## Licencia
+
+El código del sitio está bajo licencia [MIT](LICENSE): HTML, CSS, JavaScript y los
+scripts de Python.
+
+No cubre el contenido del grupo — su nombre, su logo, sus fotografías y los textos
+sobre su actividad pertenecen a Caminando por los Niños y no se licencian aquí.
