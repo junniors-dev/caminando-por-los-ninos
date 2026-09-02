@@ -1,10 +1,11 @@
 """Incrusta las fotos de recortes/ dentro del HTML como data URI."""
 import base64, os, re, sys
 
-BASE = os.path.dirname(os.path.abspath(__file__))
-IMG  = os.path.join(BASE, "recortes-webp")
-SRC  = os.path.join(BASE, "pagina.src.html")
-OUT  = os.path.join(BASE, "index.html")
+# La raiz del sitio es la carpeta de arriba: este script vive en herramientas/.
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMG  = os.path.join(RAIZ, "recortes-webp")
+SRC  = os.path.join(RAIZ, "pagina.src.html")
+OUT  = os.path.join(RAIZ, "index.html")
 
 MIME = {".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".png": "image/png", ".webp": "image/webp"}
 

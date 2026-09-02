@@ -15,7 +15,17 @@ Una sola página, sin frameworks ni build tools. HTML, CSS y JavaScript a mano.
 | `index.html` | **La página publicada.** Es un solo archivo: las fotos y el logo van incrustados en base64, así que no depende de ninguna carpeta de imágenes. |
 | `pagina.src.html` | El código fuente, con marcadores `{{nombre-foto}}` donde después entran las imágenes. **Editar acá, no en `index.html`.** |
 | `recortes-webp/` | Las fotos ya recortadas y optimizadas en WebP. |
-| `inline.py` | Toma `pagina.src.html`, reemplaza cada `{{nombre}}` por la foto correspondiente y escribe `index.html`. |
+| `herramientas/` | Los tres scripts de Python que preparan la página. No hacen falta para publicarla, solo para regenerarla. |
+
+### Los scripts
+
+| Script | Qué hace |
+|---|---|
+| `herramientas/inline.py` | Toma `pagina.src.html`, reemplaza cada `{{nombre}}` por la foto correspondiente y escribe `index.html`. **Es el único que hace falta para publicar.** |
+| `herramientas/webp.py` | Convierte los JPG de `recortes/` a WebP en `recortes-webp/`. |
+| `herramientas/afilar.py` | Reprocesa los JPG de `recortes/` para contrarrestar la doble compresión de Instagram. Se corre antes de `webp.py`. |
+
+`recortes/` no se versiona: son los intermedios. Los que se publican son los `.webp`.
 
 ## Para cambiar algo
 
@@ -23,7 +33,7 @@ Una sola página, sin frameworks ni build tools. HTML, CSS y JavaScript a mano.
 2. Correr:
 
    ```
-   python inline.py
+   python herramientas/inline.py
    ```
 
 3. Commit y push. GitHub Pages publica solo.

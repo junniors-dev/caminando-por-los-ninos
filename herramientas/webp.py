@@ -1,8 +1,11 @@
 import os
 from PIL import Image
 
-SRC = r"C:\Users\junni\Downloads\proyectos jun\caminando-web\recortes"
-DST = r"C:\Users\junni\Downloads\proyectos jun\caminando-web\recortes-webp"
+# Relativa a la raiz del sitio: asi funciona en cualquier maquina, y no
+# publica el nombre de usuario de quien la escribio.
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SRC = os.path.join(RAIZ, "recortes")
+DST = os.path.join(RAIZ, "recortes-webp")
 os.makedirs(DST, exist_ok=True)
 
 antes = despues = 0

@@ -3,7 +3,10 @@ con una mascara de enfoque suave y guarda a calidad alta."""
 import os
 from PIL import Image, ImageFilter, ImageEnhance
 
-DST = r"C:\Users\junni\Downloads\proyectos jun\caminando-web\recortes"
+# Relativa a la raiz del sitio: asi funciona en cualquier maquina, y no
+# publica el nombre de usuario de quien la escribio.
+RAIZ = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DST = os.path.join(RAIZ, "recortes")
 
 for f in sorted(os.listdir(DST)):
     nombre, ext = os.path.splitext(f)
